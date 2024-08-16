@@ -1,0 +1,177 @@
+@font-face {
+    font-family: 'Poppins Light';
+    src: url(/assets/fonts/Poppins-Light.ttf);
+    font-weight: 200;
+}
+@font-face {
+    font-family: 'Poppins Regular';
+    src: url(/assets/fonts/Poppins-Regular.ttf);
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Poppins SemiBold';
+    src: url(/assets/fonts/Poppins-SemiBold.ttf);
+    font-weight: 600;
+}
+
+:root {
+    /* Layout */
+    --mobile: 375px;
+    --desktop: 1440px;
+    /* Colors */
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --darker-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --light-gray: hsl(0, 0%, 98%);
+    /* Typography */
+    --regular-size: 15px;
+    /* Fonts */
+    --poppins-light: 'Poppins Light';
+    --poppins-regular: 'Poppins Regular';
+    --poppins-semibold: 'Poppins SemiBold';
+}
+
+/* Setting */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* utils */
+.bg-primary {
+    background: var(--light-gray);
+}
+
+.text-primary {
+    color: var(--darker-blue);
+}
+.text-secondary {
+    color: var(--grayish-blue);
+}
+.text-light {
+    font-family: var(--poppins-light);
+}
+.text-regular {
+    font-family: var(--poppins-regular);
+}
+.text-bold {
+    font-family: var(--poppins-semibold);
+}
+.text-center {
+    text-align: center;
+}
+.grid {
+    display: grid;
+}
+.items-center {
+    place-items: center;
+}
+.flex {
+    display: flex;
+}
+.flex-column {
+    flex-direction: column;
+}
+.self-center {
+    align-self: center;
+}
+.content-end {
+    justify-content: end;
+}
+.between {
+    justify-content: space-between;
+}
+.g-1 {
+    gap: .5em;
+}
+.g-2 {
+    gap: 1em;
+}
+.g-3 {
+    gap: 1.5em;
+}
+.g-4 {
+    gap: 2em;
+}
+.fluid-img {
+    max-inline-size: 100%;
+    block-size: auto;
+    object-fit: cover;
+    
+}
+/* Set defaults */
+html {
+    font-family: var(--poppins-light);
+    background: var(--light-gray);
+    font-size: calc(0.75em + 1.3vw);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-block-size: 100vh;
+}
+#root {
+    grid-template-rows: 1fr 4fr;
+}
+.container {
+    inline-size: 80%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Title section */
+.title--comment {
+    font-size: .7em;
+}
+/* card */
+#cards {
+    min-block-size: 100%;
+    grid-template-rows: repeat(4, 1fr);
+}
+#cards > article {
+    width: 100%;
+}
+.card {
+    background: white;
+    border-top: 3px solid;
+    border-radius: .2em;
+    padding: 20px;
+    cursor: pointer;
+    min-block-size: 10em;
+    -webkit-box-shadow: 0px 11px 35px -14px rgba(0,0,0,0.64);
+    -moz-box-shadow: 0px 11px 35px -14px rgba(0,0,0,0.64);
+    box-shadow: 0px 11px 35px -14px rgba(0,0,0,0.64);
+}
+/* .card > * + * {
+    margin-block-start: 10px;
+} */
+.border-red {
+    border-color: var(--red);
+}
+.border-cyan {
+    border-color: var(--cyan);
+}
+.border-orange {
+    border-color: var(--orange);
+}
+.border-blue {
+    border-color: var(--blue);
+}
+.card header h2 {
+    font-size: 1em;
+    font-family: var(--poppins-semibold);
+}
+.card section p {
+    font-size: .6em;
+    color: var(--grayish-blue);
+    text-align: start;
+}
